@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UsageEnvironment", "..\Usag
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mediaServer", "..\mediaServer\mediaServer.vcxproj", "{44A1A29A-CD81-4B7E-A424-D1EAF54EA163}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UsageVideoSource", "..\UsageSource\UsageVideoSource\UsageVideoSource.vcxproj", "{CAB95756-84DE-4366-A586-478B2D8C268A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{44A1A29A-CD81-4B7E-A424-D1EAF54EA163}.Release|x64.Build.0 = Release|x64
 		{44A1A29A-CD81-4B7E-A424-D1EAF54EA163}.Release|x86.ActiveCfg = Release|Win32
 		{44A1A29A-CD81-4B7E-A424-D1EAF54EA163}.Release|x86.Build.0 = Release|Win32
+		{CAB95756-84DE-4366-A586-478B2D8C268A}.Debug|x64.ActiveCfg = Debug|x64
+		{CAB95756-84DE-4366-A586-478B2D8C268A}.Debug|x64.Build.0 = Debug|x64
+		{CAB95756-84DE-4366-A586-478B2D8C268A}.Debug|x86.ActiveCfg = Debug|Win32
+		{CAB95756-84DE-4366-A586-478B2D8C268A}.Debug|x86.Build.0 = Debug|Win32
+		{CAB95756-84DE-4366-A586-478B2D8C268A}.Release|x64.ActiveCfg = Release|x64
+		{CAB95756-84DE-4366-A586-478B2D8C268A}.Release|x64.Build.0 = Release|x64
+		{CAB95756-84DE-4366-A586-478B2D8C268A}.Release|x86.ActiveCfg = Release|Win32
+		{CAB95756-84DE-4366-A586-478B2D8C268A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

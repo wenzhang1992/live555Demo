@@ -14,3 +14,4 @@ BasicUsageEnvironment/BasicUsageEnvironment/x64/Debug/BasicUsageEnvironment.idb
 *.264
 *.mp4
 *.db
+*.ipch
