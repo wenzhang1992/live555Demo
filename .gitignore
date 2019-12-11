@@ -1,0 +1,16 @@
+
+*.tlog
+*.obj
+*.log
+BasicUsageEnvironment/BasicUsageEnvironment/x64/Debug/BasicUsageEnvironment.idb
+*.pdb
+*.lib
+*.exe
+*.ilk
+*.vcxproj
+*.filters
+*.idb
+*.user
+*.264
+*.mp4
+*.db
