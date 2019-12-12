@@ -6,16 +6,22 @@
 #include "stdafx.h"
 #include "ByteStreamFileSource.hh"
 #include "Common.h"
-DllExport class UsageVideoSource : public ByteStreamFileSource
+DllExport class UsageVideoSource : public FramedSource
 {
 public:
-	static UsageVideoSource* createNew(UsageEnvironment& env, char const* fileName, unsigned preferredFrameSize /* = 0 */, unsigned playTimePerFrame /* = 0 */);
+	static UsageVideoSource* createNew(UsageEnvironment& env, char * fileName, unsigned preferredFrameSize , unsigned playTimePerFrame );
+
+	virtual void doGetNextFrame();
 
 protected:
 	UsageVideoSource(UsageEnvironment& env,char *fileName,unsigned preferredFrameSize, unsigned playTimePerFrame);
 
 	~UsageVideoSource();
 private:
+	unsigned m_fPreferredFrameSize;
+
+	unsigned m_fPlayTimePerFrame;
+
 	char *m_fileName = nullptr;
 
 	unsigned char *m_ucImageBufferY16 = nullptr;
@@ -24,13 +30,17 @@ private:
 
 	unsigned char *m_ucImageBufferYUV420 = nullptr;
 
-	std::ifstream *m_fileStream = nullptr;
+	unsigned char *m_ucImageBufferH264 = nullptr;
 
-	virtual void doGetNextFrame();
+	std::ifstream *m_fileStream = nullptr;
 
 	int m_iFrameNum = 0;
 
 	ImageChange *m_pImageChange = nullptr;
+
+	VideoEncodec *m_pVideoEncodec = nullptr;
+
+	unsigned fLastPlayTime;
 };
 
 #endif

@@ -73,7 +73,7 @@ class VideoEncodec
     /********************************视频封装录制**************************************/
     bool InitEncodec(int width, int height, bool IsNetWork, const char *fileName = "test.h264");
 
-    bool WriteEncodecFrame(uint8_t *srcData, uint8_t *dstData, int &frameSize, int frameNum);
+    bool WriteEncodecFrame(uint8_t *srcData, uint8_t *dstData, unsigned int &frameSize, int frameNum);
 
     bool CloseEncodec();
 

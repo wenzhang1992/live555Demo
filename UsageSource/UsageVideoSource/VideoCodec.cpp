@@ -101,7 +101,7 @@ bool VideoEncodec::InitEncodec(int width, int height, bool IsNetWork, const char
     m_iYSize = m_pCodecCtx->width * m_pCodecCtx->height;
 }
 
-bool VideoEncodec::WriteEncodecFrame(uint8_t *srcData, uint8_t *dstData, int &frameSize, int frameNum)
+bool VideoEncodec::WriteEncodecFrame(uint8_t *srcData, uint8_t *dstData, unsigned int &frameSize, int frameNum)
 {
     memcpy(m_pictureBuffer, srcData, m_iPictureSize);
 
@@ -135,6 +135,10 @@ bool VideoEncodec::WriteEncodecFrame(uint8_t *srcData, uint8_t *dstData, int &fr
     int ret = avcodec_receive_packet(m_pCodecCtx, &m_pkt);
 
     av_write_frame(m_pFormatCtx, &m_pkt);
+
+	memcpy(dstData, m_pkt.data, m_pkt.size);
+
+	frameSize = m_pkt.size;
 
     return true;
 }
