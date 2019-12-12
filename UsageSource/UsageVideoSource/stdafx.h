@@ -12,6 +12,6 @@
 #include <windows.h>
 #include <iostream>
 #include <fstream>
-
-
+#include "GdImageLib.h"
+#include "VideoCodec.h"
 // TODO:  在此处引用程序需要的其他头文件

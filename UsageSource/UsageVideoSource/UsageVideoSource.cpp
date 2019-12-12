@@ -19,6 +19,8 @@ UsageVideoSource::UsageVideoSource(UsageEnvironment& env, char *fileName, unsign
 	m_ucImageBufferY8 = new unsigned char[ImageWidth*ImageHeight];
 
 	m_ucImageBufferYUV420 = new unsigned char[ImageWidth*ImageHeight*1.5];
+
+	m_pImageChange = new ImageChange(ImageWidth, ImageHeight, ImageWidth, ImageHeight, AV_PIX_FMT_YUV420P, AV_PIX_FMT_GRAY8);
 }
 
 UsageVideoSource::~UsageVideoSource()
@@ -30,11 +32,17 @@ void UsageVideoSource::doGetNextFrame()
 {
 	m_fileStream->read((char*)m_ucImageBufferY16, ImageSize);
 
-	int count = m_fileStream->gcount();
+	fFrameSize = m_fileStream->gcount();
 
-	if (count != ImageSize)
+	if (fFrameSize != ImageSize)
 	{
 		return;
 	}
+
+	GdImageLib::Map16BitTo8Bit_u(reinterpret_cast<unsigned short*>(m_ucImageBufferY16), ImageSize, m_ucImageBufferY8);
+
+	m_pImageChange->ConvertFmt(m_ucImageBufferY8, m_ucImageBufferYUV420);
+
+
 }
 

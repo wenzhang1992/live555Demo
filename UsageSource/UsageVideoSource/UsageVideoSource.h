@@ -29,6 +29,8 @@ private:
 	virtual void doGetNextFrame();
 
 	int m_iFrameNum = 0;
+
+	ImageChange *m_pImageChange = nullptr;
 };
 
 #endif
