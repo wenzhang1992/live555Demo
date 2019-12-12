@@ -7,7 +7,6 @@ BasicUsageEnvironment/BasicUsageEnvironment/x64/Debug/BasicUsageEnvironment.idb
 *.lib
 *.exe
 *.ilk
-*.vcxproj
 *.filters
 *.idb
 *.user
